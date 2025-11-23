@@ -10,15 +10,15 @@ This project can be run hourly using apache airflow docker container. To do that
 
 1- Navigate to airflow/ folder:
 
-cd airflow
+```cd airflow```
 
 2- Build Docker images:
 
-docker-compose build
+```docker-compose build```
 
 3- Start services:
 
-docker-compose up -d
+```docker-compose up -d```
 
 4- Access Airflow UI: <http://localhost:8080>
 
