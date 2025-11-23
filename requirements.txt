@@ -7,3 +7,4 @@ schedule
 google-api-python-client   # optional
 selenium                    # optional
 pyyaml
+matplotlib
