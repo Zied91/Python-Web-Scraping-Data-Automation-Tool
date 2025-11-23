@@ -54,3 +54,48 @@ def create_stock_price_chart(csv_file, output_file="charts/stock_prices.png"):
     plt.savefig(output_file)
     plt.close()
     print(f"[CHART SAVED] {output_file}")
+
+def create_crypto_price_trend(history_file, output_file="charts/crypto_price_trend.png"):
+    df = pd.read_csv(history_file)
+
+    plt.figure(figsize=(12, 6))
+
+    for name in df["name"].unique():
+        sub = df[df["name"] == name]
+        plt.plot(sub["timestamp"], 
+                 sub["price"].str.replace("$", "").str.replace(",", "").astype(float),
+                 label=name)
+
+    plt.title("Crypto Price Trend Over Time")
+    plt.xlabel("Timestamp")
+    plt.ylabel("Price (USD)")
+    plt.xticks(rotation=45)
+    plt.legend()
+    plt.tight_layout()
+    plt.savefig(output_file)
+    plt.close()
+
+    print(f"[CHART SAVED] {output_file}")
+
+
+def create_stock_price_trend(history_file, output_file="charts/stock_price_trend.png"):
+    df = pd.read_csv(history_file)
+
+    plt.figure(figsize=(12, 6))
+
+    for symbol in df["symbol"].unique():
+        sub = df[df["symbol"] == symbol]
+        plt.plot(sub["timestamp"], 
+                 sub["price"].str.replace(",", "").astype(float),
+                 label=symbol)
+
+    plt.title("Stock Price Trend Over Time")
+    plt.xlabel("Timestamp")
+    plt.ylabel("Price (USD)")
+    plt.xticks(rotation=45)
+    plt.legend()
+    plt.tight_layout()
+    plt.savefig(output_file)
+    plt.close()
+
+    print(f"[CHART SAVED] {output_file}")
