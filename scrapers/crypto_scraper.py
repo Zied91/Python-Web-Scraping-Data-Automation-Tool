@@ -13,7 +13,7 @@ class CryptoScraper(ScraperBase):
             name = row.select_one("p.coin-item-name").text + f" {row.select_one("p.coin-item-symbol").text}"
             price = row.select("td")[3].text
             change_24h = row.select("td")[5].text
-            market_cap = row.select("td")[7].text
+            market_cap = row.select_one("span.sc-11478e5d-1").text
 
             results.append({
                 "name": name,
