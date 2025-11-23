@@ -11,7 +11,7 @@ class CryptoScraper(ScraperBase):
 
         for row in table[:14]:  # top 20 crypto
             name = row.select_one("p.coin-item-name").text + f" {row.select_one("p.coin-item-symbol").text}"
-            price = row.select("td")[4].text
+            price = row.select("td")[3].text
             change_24h = row.select("td")[5].text
             market_cap = row.select("td")[7].text
 
