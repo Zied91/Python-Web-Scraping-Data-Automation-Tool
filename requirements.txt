@@ -1,0 +1,9 @@
+beautifulsoup4
+requests
+pandas
+lxml
+python-dotenv
+schedule
+google-api-python-client   # optional
+selenium                    # optional
+pyyaml

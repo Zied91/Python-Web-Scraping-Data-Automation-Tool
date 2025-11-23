@@ -1,0 +1,12 @@
+crypto_sources:
+  - name: CoinMarketCap
+    url: "https://coinmarketcap.com/"
+
+stocks_sources:
+  - name: YahooFinance
+    symbols: ["AAPL", "TSLA", "AMZN"]
+    url_template: "https://finance.yahoo.com/quote/{symbol}"
+
+scheduler:
+  run: true
+  interval_hours: 4
